@@ -16,7 +16,13 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
       "package": "com.anonymous.farmapp"
+    },
+    "ios": {
+      "infoPlist": {}
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +41,13 @@
         }
       ],
       "expo-sqlite",
-      "@maplibre/maplibre-react-native"
+      "@maplibre/maplibre-react-native",
+      [
+        "react-native-permissions",
+        {
+          "iosPermissions": []
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
