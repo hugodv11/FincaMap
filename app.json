@@ -2,14 +2,15 @@
   "expo": {
     "name": "FincaMap",
     "slug": "fincamap",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {}
     },
     "android": {
       "adaptiveIcon": {
@@ -20,9 +21,6 @@
         "android.permission.ACCESS_FINE_LOCATION"
       ],
       "package": "com.anonymous.farmapp"
-    },
-    "ios": {
-      "infoPlist": {}
     },
     "web": {
       "bundler": "metro",
