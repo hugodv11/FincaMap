@@ -1,4 +1,8 @@
-import { Camera, MapView, MarkerView } from "@maplibre/maplibre-react-native";
+import {
+  Camera,
+  Map as MapLibre,
+  Marker,
+} from "@maplibre/maplibre-react-native";
 import { useEffect, useState } from "react";
 import { Image, StyleSheet, View, TouchableOpacity } from "react-native";
 import Geolocation, {
@@ -76,21 +80,23 @@ export default function Map() {
 
   return (
     <View style={{ flex: 1 }}>
-      <MapView
+      <MapLibre
         style={{ flex: 1 }}
         mapStyle="https://api.maptiler.com/maps/basic-v2/style.json?key=PMK5ywsC29zKMVfrB4U4"
       >
         <Camera
-          centerCoordinate={[location.longitude, location.latitude]}
-          zoomLevel={15}
+          initialViewState={{
+            center: [location.longitude, location.latitude],
+            zoom: 15,
+          }}
         />
-        <MarkerView coordinate={[location.longitude, location.latitude]}>
+        <Marker lngLat={[location.longitude, location.latitude]}>
           <Image
             source={require("@/assets/icons/tractor.png")}
             style={styles.tractorIcon}
           />
-        </MarkerView>
-      </MapView>
+        </Marker>
+      </MapLibre>
       <TouchableOpacity style={styles.button} onPress={getCurrentLocationClick}>
         <MaterialIcons
           name={locationEnabled ? "my-location" : "location-searching"}
